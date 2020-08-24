@@ -37,6 +37,7 @@ nav{
   background: #E5ECEC;
   color:#535454 ;
   width:10em;
+  text-align: center;
 }
 .search-icon{
   height:25px;
@@ -81,7 +82,7 @@ nav{
   text-align:center;
   font-family: Archivo;
   font-size: 2.2em;
-  color:#BAC1C1     ;
+  color:#29292A       ;
   margin-bottom: 10px;
 }
 .temp{
