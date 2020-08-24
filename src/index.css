@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo:wght@500&family=Oswald&family=Prata&display=swap');
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+/* For navigation */
+nav{
+  background:#949494 ;
+  display:flex;
+  justify-content: space-between;
+  height:7vh;
+  align-items: center;
+}
+.search-box{
+  display:flex;
+  background:#D2D2D2;
+  margin-right:3.5em;
+  height:1.5em;
+  border-radius: 5px;
+}
+.input{
+ background:#D2D2D2;
+ border-radius: 5px 0 0 5px;
+ border:none;
+ outline:none;
+ width:6em;
+}
+.input::placeholder{
+  padding:5px;
+  color:#535454 ;
+  margin:5px;
+}
+.input:focus,.input:focus::placeholder{
+  background: #E5ECEC;
+  color:#535454 ;
+  width:10em;
+}
+.search-icon{
+  height:25px;
+  width:20px;
+  cursor: pointer;
+}
+.logo-name{
+  color:white;
+  font-size:1.5em;
+  font-family:Rowdies;
+  margin-left:2.5em;
+  font-weight: bold;
+}
+.logo-name span{
+  font-weight: lighter;
+}
+/* for main page */
+.slim{
+  background-image: url(./assets/mistymountains.jpg);
+  background-size: cover;
+  background-position:center;
+  height:150vh;
+  background-attachment: fixed;
+}
+.main{
+  margin:0 auto;
+  width:90%;
+  height:100%;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.country{
+  text-align: center;
+  padding:10px;
+  font-family: Abril Fatface;
+  font-size: 3em;
+  color: #011627 ;
+  text-shadow: 2px 2px 3px rgba(225,225,225,0.8 );
+  padding-top:.5em;
+}
+.date{
+  padding:10px;
+  text-align:center;
+  font-family: Archivo;
+  font-size: 2.2em;
+  color:#BAC1C1     ;
+  margin-bottom: 10px;
+}
+.temp{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color:#D2D4D4     ;
+  background-color: rgba(225,225,225,0.3 );
+  width: 200px;
+  height:150px;
+  font-size:4em;
+  font-family: Archivo;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(225,225,225,0.8), 0 1px 2px rgba(225,225,225,0.9);
+}
+.weather-details{
+  text-align: center;
+  margin:1em;
+  font-size:2em;
+  font-family: Archivo;
+  color:#D2D2D2 ;
+}
+.weather-details::after{
+  content:'';
+  height:1.5px;
+  width:12em;
+  margin: 0 auto;
+  background:#B7B8B8 ;
+  display:block;
+  margin-top:10px;
+}
+.weather-info{
+  margin:0 auto;
+  display:grid;
+  align-items: center;  
+  grid-template-rows: 1fr 1px 1fr 1px 1fr;
+  background:rgba(225,225,225,0.3);
+  height: 300px;
+  width: 50%;
+  font-family: Prata;
+  border-radius: 4px;
+  color:white;
+
+  box-shadow: 0 1px 3px rgba(225,225,225,0.12), 0 1px 2px rgba(225,225,225,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.weather-info:hover{
+  box-shadow: 0 14px 28px rgba(225,225,225,0.25), 0 10px 10px rgba(225,225,225,0.22);
+}
+.row{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  height:14vh;
+}
+.line{
+  height:1px;
+  width:90%;
+  margin:0 auto;
+  background:#D8D8D8  ;
+}
+.info{
+  height:4em;
+  width:10em;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.key{
+  font-size:.6em;
+  letter-spacing: 1px;
+}
+
+/* footer */
+footer{
+  background:#949494;
+  height:8vh;
+  display:grid;
+  grid-template-columns: 1fr 1fr 2fr 1fr .1fr;
+}
+.small{
+  font-size:1.3em;
+  display:flex;
+  align-items: center;
+}
+.icons{
+  display:flex;
+  align-items: center;
+  grid-column:4/5;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+.icons a{
+  margin-right:8px;
+  margin-top:5px;
+}
+icons a:last-child{
+  margin:0;
+}
+.icons img{
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:700px){
+  body{
+    min-width: fit-content;
+  }
+  .slim{
+    height:auto;
+  }
+  .main{
+    box-shadow: none;
+  }
+  .logo-name{
+    margin:30px;
+  }
+  .search-box{
+    margin:30px;
+  }
+  .country{
+    font-size:35px;
+  }
+  .date{
+    font-size:25px;
+  }
+  .weather-details::after{
+    height:0;
+  }
+  .weather-info{
+    width:80%;
+    height:40%;
+    
+  }
+  .info{
+    margin-left:1em;
+  }
+  .line{
+    margin-left: 0;
+  }
+  .key{
+    font-size:.8em;
+  }
+  .slim{
+    height:120vh;
+  }
+  
+ footer{
+   all:none;
+   display:flex;
+   height:100%;
+   justify-content: space-between;
+   align-items: center;
+ }
+ 
+}
