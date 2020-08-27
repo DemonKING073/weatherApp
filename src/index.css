@@ -62,6 +62,13 @@ nav{
   background-position:center;
   height:150vh;
   background-attachment: fixed;
+  transition: 2s ease-out;
+}
+.rain{
+  background-image: url(./assets/rain.png);
+}
+.sunny{
+  background-image: url(./assets/sunny.png);
 }
 .main{
   margin:0 auto;

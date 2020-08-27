@@ -25,7 +25,7 @@ const Homepage=(props)=>{
             
         })
     },[url]);
-  let name,date,temp,type,gust,wind,visibility,uv,humidity,pressure='';
+  let name,date,temp,type,gust,wind,visibility,uv,humidity,pressure,backgroundToogle='';
   if(state.data!=null){
      name=`${state.data.location.name}, ${state.data.location.country}`;
      date=state.data.location.localtime;
@@ -37,55 +37,160 @@ const Homepage=(props)=>{
      uv=state.data.current.uv;
      humidity=`${state.data.current.humidity}%`;
      pressure=`${state.data.current.pressure_mb} mb`;
-  }
      
+     if(type.includes('rain')){
+         backgroundToogle='rain';
+     }
+     else if(type.includes('Sunny')){
+         backgroundToogle='sunny';
+     }
+    console.log(backgroundToogle);
+    
+  }
   
-
-    return(
-        <div className="slim">
-        <div className="main">
-            <div className="country">{name}</div>
-            <div className="date">{date}</div>
-            <div className="temp">{temp}</div>
-            <div className="weather-details">{type}</div>
-            <div className="weather-info">
-                <div className="row">
-                    <div className="info">
-                        <div className="key">GUST</div>
-                        <div className="value">{gust}</div>
+    
+    if(backgroundToogle==='sunny'){
+        return(
+            <div className="slim sunny">
+            <div className="main">
+                <div className="country">{name}</div>
+                <div className="date">{date}</div>
+                <div className="temp">{temp}</div>
+                <div className="weather-details">{type}</div>
+                <div className="weather-info">
+                    <div className="row">
+                        <div className="info">
+                            <div className="key">GUST</div>
+                            <div className="value">{gust}</div>
+                        </div>
+                        <div className="info">
+                            <div className="key">UV INDEX</div>
+                            <div className="value">{uv}</div>
+                        </div>
                     </div>
-                    <div className="info">
-                        <div className="key">UV INDEX</div>
-                        <div className="value">{uv}</div>
+                    <div className="line"></div>
+                    <div className="row">
+                        <div className="info">
+                            <div className="key">WIND</div>
+                            <div className="value">{wind}</div>
+                        </div>
+                        <div className="info">
+                            <div className="key">HUMIDITY</div>
+                            <div className="value">{humidity}</div>
+                        </div>
+                    </div>
+                    <div className="line"></div>
+                    <div className="row">
+                        <div className="info">
+                            <div className="key">VISIBILITY</div>
+                            <div className="value">{visibility}</div>
+                        </div>
+                        <div className="info">
+                            <div className="key">PRESSURE</div>
+                            <div className="value">{pressure}</div> 
+                        </div>
                     </div>
                 </div>
-                <div className="line"></div>
-                <div className="row">
-                    <div className="info">
-                        <div className="key">WIND</div>
-                        <div className="value">{wind}</div>
-                    </div>
-                    <div className="info">
-                        <div className="key">HUMIDITY</div>
-                        <div className="value">{humidity}</div>
-                    </div>
-                </div>
-                <div className="line"></div>
-                <div className="row">
-                    <div className="info">
-                        <div className="key">VISIBILITY</div>
-                        <div className="value">{visibility}</div>
-                    </div>
-                    <div className="info">
-                        <div className="key">PRESSURE</div>
-                        <div className="value">{pressure}</div> 
-                    </div>
-                </div>
+                <div className="space"></div>
             </div>
-            <div className="space"></div>
-        </div>
-        </div>
-    );
+            </div>
+        );
+    }
+    else if(backgroundToogle==='rain'){
+        return(
+            <div className="slim rain">
+            <div className="main">
+                <div className="country">{name}</div>
+                <div className="date">{date}</div>
+                <div className="temp">{temp}</div>
+                <div className="weather-details">{type}</div>
+                <div className="weather-info">
+                    <div className="row">
+                        <div className="info">
+                            <div className="key">GUST</div>
+                            <div className="value">{gust}</div>
+                        </div>
+                        <div className="info">
+                            <div className="key">UV INDEX</div>
+                            <div className="value">{uv}</div>
+                        </div>
+                    </div>
+                    <div className="line"></div>
+                    <div className="row">
+                        <div className="info">
+                            <div className="key">WIND</div>
+                            <div className="value">{wind}</div>
+                        </div>
+                        <div className="info">
+                            <div className="key">HUMIDITY</div>
+                            <div className="value">{humidity}</div>
+                        </div>
+                    </div>
+                    <div className="line"></div>
+                    <div className="row">
+                        <div className="info">
+                            <div className="key">VISIBILITY</div>
+                            <div className="value">{visibility}</div>
+                        </div>
+                        <div className="info">
+                            <div className="key">PRESSURE</div>
+                            <div className="value">{pressure}</div> 
+                        </div>
+                    </div>
+                </div>
+                <div className="space"></div>
+            </div>
+            </div>
+        );
+    }
+    else{
+        return(
+            <div className="slim ">
+            <div className="main">
+                <div className="country">{name}</div>
+                <div className="date">{date}</div>
+                <div className="temp">{temp}</div>
+                <div className="weather-details">{type}</div>
+                <div className="weather-info">
+                    <div className="row">
+                        <div className="info">
+                            <div className="key">GUST</div>
+                            <div className="value">{gust}</div>
+                        </div>
+                        <div className="info">
+                            <div className="key">UV INDEX</div>
+                            <div className="value">{uv}</div>
+                        </div>
+                    </div>
+                    <div className="line"></div>
+                    <div className="row">
+                        <div className="info">
+                            <div className="key">WIND</div>
+                            <div className="value">{wind}</div>
+                        </div>
+                        <div className="info">
+                            <div className="key">HUMIDITY</div>
+                            <div className="value">{humidity}</div>
+                        </div>
+                    </div>
+                    <div className="line"></div>
+                    <div className="row">
+                        <div className="info">
+                            <div className="key">VISIBILITY</div>
+                            <div className="value">{visibility}</div>
+                        </div>
+                        <div className="info">
+                            <div className="key">PRESSURE</div>
+                            <div className="value">{pressure}</div> 
+                        </div>
+                    </div>
+                </div>
+                <div className="space"></div>
+            </div>
+            </div>
+        );
+    }
+    
 }
 
 export default Homepage;
