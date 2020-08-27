@@ -62,7 +62,7 @@ nav{
   background-position:center;
   height:150vh;
   background-attachment: fixed;
-  transition: 2s ease-out;
+  transition: .5s ease-out;
 }
 .rain{
   background-image: url(./assets/rain.png);
